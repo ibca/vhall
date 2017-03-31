@@ -9,8 +9,7 @@ class webinar implements model
     public function register()
     {
         // TODO: Implement register() method.
-        $app = new self();
-        return $app;
+        return new self();
     }
 
     public function activeimage(array $param)
@@ -27,8 +26,6 @@ class webinar implements model
 
         $requestData['image'] = new \CURLFile($imageUrl);
 
-        $method = $this->getModel().'/'.$this->getfunc(__FUNCTION__);
-
         return $this->requestData($method ,$requestData);
     }
 
@@ -38,7 +35,7 @@ class webinar implements model
         $func = $this->getFunc($name);
 
         list($paramCheck, $method) = $this->listCheckAndFunc($model, $func);
-        $requestData = $this->paramCheck($arguments, $paramCheck);
+        $requestData = $this->paramCheck($arguments[0], $paramCheck);
 
         return $this->requestData($method ,$requestData);
     }

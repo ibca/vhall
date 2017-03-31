@@ -37,7 +37,7 @@ class sdk
     ];
 
 
-    public static function action($model, $action, $param)
+    public static function action($model, $action, array $param)
     {
         self::getInstance($model);
 

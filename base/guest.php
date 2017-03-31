@@ -24,7 +24,7 @@ class guest implements model
         $func = $this->getFunc($name);
 
         list($paramCheck, $method) = $this->listCheckAndFunc($model, $func);
-        $requestData = $this->paramCheck($arguments, $paramCheck);
+        $requestData = $this->paramCheck($arguments[0], $paramCheck);
 
         return $this->requestData($method ,$requestData);
     }

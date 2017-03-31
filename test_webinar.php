@@ -44,10 +44,9 @@ $webinarId = 250031234;
 //]);
 //\vhall\dump($result);
 //
-// 获取活动列表
-$result = \vhall\sdk::action('webinar','list', []);
-\vhall\dump($result);
-exit;
+//// 获取活动列表
+//$result = \vhall\sdk::action('webinar','list', []);
+//\vhall\dump($result);
 //
 //// 更新活动信息
 //$result = \vhall\sdk::action('webinar','update',[
@@ -77,7 +76,7 @@ exit;
 //\vhall\dump($result);
 
 // 获取当前在线人数
-$result = \vhall\sdk::action('webinar','current-online-number',[
-    'webinar_id' => $webinarId,
-]);
-\vhall\dump($result);
+//$result = \vhall\sdk::action('webinar','current-online-number',[
+//    'webinar_id' => $webinarId,
+//]);
+//\vhall\dump($result);
