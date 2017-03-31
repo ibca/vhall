@@ -1,14 +1,41 @@
 <?php namespace vhall\base;
 use Exception;
+use vhall\sdk;
 
 trait common
 {
+    static $checkConfig;
+
     private function getModel()
     {
         $localModel = __CLASS__;
         $localModelMsg = explode('\\', $localModel);
 
         return $localModelMsg[count($localModelMsg) - 1];
+    }
+
+    private function getFunc($func)
+    {
+        $searchIndex = array_search($func, sdk::$funcRename);
+
+        if ($searchIndex !== false) {
+            $func = $searchIndex;
+        }
+
+        return str_replace('_', '-', $func);
+    }
+
+
+    private function listCheckAndFunc($model, $action)
+    {
+        if (!isset($checkConfig)) {
+            if (!file_exists(SDK_PATH.'/check.json')) throw new Exception('参数配置文件不存在');
+            $checkConfig = file_get_contents(SDK_PATH.'/check.json');
+            self::$checkConfig = json_decode($checkConfig, true);
+        }
+        if (!isset(self::$checkConfig[$model][$action])) throw new Exception('参数文件对应配置缺失');
+
+        return [self::$checkConfig[$model][$action], $model.'/'. $action];
     }
 
     protected function paramCheck($param, $checkData)

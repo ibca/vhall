@@ -3,12 +3,12 @@
  * Created by PhpStorm.
  * User: NelsonKing
  * Date: 2017/3/31
- * Time: 10:23
+ * Time: 11:46
  */
 
 use Exception;
 
-class guest implements model
+class user implements model
 {
     use common;
 
@@ -28,4 +28,5 @@ class guest implements model
 
         return $this->requestData($method ,$requestData);
     }
+
 }

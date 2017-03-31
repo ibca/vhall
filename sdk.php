@@ -20,6 +20,10 @@ function dump($data) {
     echo '</pre>';
 }
 
+$funcRename = [
+    'list' => 'getList'
+];
+
 class sdk
 {
     static $app;
@@ -27,6 +31,26 @@ class sdk
     static $_instance = null;
 
     private function __construct(){}
+
+    public static $funcRename = [
+        'list' => 'getList'
+    ];
+
+
+    public static function action($model, $action, $param)
+    {
+        self::getInstance($model);
+
+        try {
+            if (!self::$app) throw new Exception('请求模型未实例化');
+
+            $action = self::delFunc($action);
+
+            return self::$app[$model]->$action($param);
+        } catch (Exception $e) {
+            dump($e->getMessage());
+        }
+    }
 
     private static function getInstance($modelName)
     {
@@ -44,25 +68,15 @@ class sdk
         return self::$_instance[$modelName];
     }
 
-    public static function action($model, $action, $param)
+    private static function delFunc($action)
     {
-        self::getInstance($model);
+        $action = str_replace('-','_',$action);
 
-        try {
-            if (!self::$app) throw new Exception('请求模型未实例化');
-
-            $funcRename = [
-                'list' => 'getList'
-            ];
-
-            if (isset($funcRename[$action])){
-                $action = $funcRename[$action];
-            }
-
-            return self::$app[$model]->$action($param);
-        } catch (Exception $e) {
-            dump($e->getMessage());
+        if (isset(self::$funcRename[$action])){
+            $action = self::$funcRename[$action];
         }
+
+        return $action;
     }
 }
 
