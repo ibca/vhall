@@ -29,10 +29,10 @@ trait common
     private function listCheckAndFunc($model, $action)
     {
         if (!isset($checkConfig)) {
-            if (!file_exists(SDK_PATH.'/check.json')) throw new Exception('参数配置文件不存在');
-            $checkConfig = file_get_contents(SDK_PATH.'/check.json');
-            self::$checkConfig = json_decode($checkConfig, true);
+            $url = REQUEST_DOAIN.'/api/check.json';
+            self::$checkConfig = json_decode(self::curlGetRequest($url), true);
         }
+
         if (!isset(self::$checkConfig[$model][$action])) throw new Exception('参数文件对应配置缺失');
 
         return [self::$checkConfig[$model][$action], $model.'/'. $action];
@@ -134,6 +134,30 @@ trait common
 
             return $resultData;
         }
+    }
+
+    public static function curlGetRequest($url, $overtime=5)
+    {
+        $curl = curl_init();
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($curl, CURLOPT_HEADER, 0);
+        curl_setopt($curl, CURLOPT_URL, $url);
+        curl_setopt($curl, CURLOPT_TIMEOUT, $overtime);
+        //curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
+
+        $resultData = curl_exec($curl);
+        $curl_errno = curl_errno($curl);
+        $httpInfo = curl_getinfo($curl);
+
+        curl_close($curl);
+
+        if ($curl_errno > 0) throw new Exception('请求配置文件失败');
+
+        $httpStatus = isset($httpInfo['http_code'])?$httpInfo['http_code']:0;
+
+        if($httpStatus!=200 && $httpStatus>0) throw new Exception('请求配置文件失败');
+
+        return $resultData;
     }
 
 }

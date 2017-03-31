@@ -9,11 +9,11 @@ define('REQUEST_DOAIN', 'www.livhall.com');
 $webinarId = 250031234;
 
 // //文件上传
-//$result = \vhall\sdk::action('webinar','activeimage',[
-//    'webinar_id' => $webinarId,
-//    'image' => __DIR__.'/logo.png'
-//]);
-//
+$result = \vhall\sdk::action('webinar','activeimage',[
+    'webinar_id' => $webinarId,
+    'image' => __DIR__.'/logo.png'
+]);
+
 //\vhall\dump($result);
 //
 //// 创建活动
@@ -76,7 +76,7 @@ $webinarId = 250031234;
 //\vhall\dump($result);
 
 // 获取当前在线人数
-//$result = \vhall\sdk::action('webinar','current-online-number',[
-//    'webinar_id' => $webinarId,
-//]);
-//\vhall\dump($result);
+$result = \vhall\sdk::action('webinar','current-online-number',[
+    'webinar_id' => $webinarId,
+]);
+\vhall\dump($result);
