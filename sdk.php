@@ -1,6 +1,7 @@
 <?php namespace vhall;
 
 use Exception;
+use vhall\base\model;
 
 define('SDK_PATH', dirname(__FILE__));
 define('BASE', SDK_PATH.'/base');
@@ -25,28 +26,31 @@ class sdk
 
     static $_instance = null;
 
-    private function __construct($model)
-    {
-        $model = '\vhall\base\\'.$model;
-        $model = new $model();
+    private function __construct(){}
 
-        self::$app = $model->register();
-    }
-
-    public static function getInstance($model)
+    private static function getInstance($modelName)
     {
-        if (self::$_instance) {
-            return self::$_instance;
+        if (isset(self::$_instance[$modelName])) {
+            return self::$_instance[$modelName];
         }
-        self::$_instance = new self($model);
 
-        return self::$_instance;
+        $model = '\vhall\base\\'.$modelName;
+        $model = new $model();
+        if (!$model instanceof model) throw new Exception('模型必须继承自model');
+
+        self::$app[$modelName] = $model->register();
+        self::$_instance[$modelName] = new self();
+
+        return self::$_instance[$modelName];
     }
 
-    public static function action($action, $param)
+    public static function action($model, $action, $param)
     {
+        self::getInstance($model);
+
         try {
             if (!self::$app) throw new Exception('请求模型未实例化');
+
             $funcRename = [
                 'list' => 'getList'
             ];
@@ -55,7 +59,7 @@ class sdk
                 $action = $funcRename[$action];
             }
 
-            return self::$app->$action($param);
+            return self::$app[$model]->$action($param);
         } catch (Exception $e) {
             dump($e->getMessage());
         }
