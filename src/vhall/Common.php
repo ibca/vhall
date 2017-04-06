@@ -28,7 +28,7 @@ abstract class Common
 
         $this->appKey        = $config['app_key'];
         $this->secretKey     = $config['secret_key'];
-        $this->requestDomain = isset($config['request_domain']) ? $config['request_domain'] : 'www.livhall.com';
+        $this->requestDomain = isset($config['request_domain']) ? $config['request_domain'] : 'e.vhall.com';
     }
 
     /**

@@ -1,7 +1,6 @@
 # Vhall Web SDK for PHP
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](LICENSE)
-[![Build Status](https://travis-ci.org/vhall/web_sdk_php.svg)](https://travis-ci.org/vhall/web_sdk_php)
-[![Latest Stable Version](https://img.shields.io/packagist/v/vhall/web_sdk_php.svg)](https://packagist.org/packages/vhall/web_sdk_php)
+[![Latest Stable Version](https://img.shields.io/packagist/v/vhall/web_sdk_php.svg)](https://packagist.org/packages/vhall/web_sdk)
 
 ## 安装
 
@@ -29,7 +28,6 @@ use Vhall\Webinar;
     $config = [
         'app_key' => '9100f829ccabfeb689de7b08a0a57f2e',
         'secret_key' => 'dc9b53947c3d2d2a0d9c4067071576e6',
-        'request_domain' => 'www.livhall.com'
     ];
     
     $webinarObj = new Webinar($config);
