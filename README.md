@@ -5,9 +5,9 @@
 
 ## 安装
 
-* 通过composer，这是推荐的方式，可以使用composer.json 声明依赖，或者运行下面的命令。SDK 包已经放到这里 [`vhall/web_sdk_php`][install-packagist] 。
+* 通过composer，这是推荐的方式，可以使用composer.json 声明依赖，或者运行下面的命令。SDK 包已经放到这里 [`vhall/web_sdk`][install-packagist] 。
 ```bash
-$ composer require vhall/web_sdk_php
+$ composer require vhall/web_sdk
 ```
 * 直接下载安装，SDK 没有依赖其他第三方库，但需要参照 composer的autoloader，增加一个自己的autoloader程序。
 
