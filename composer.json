@@ -1,0 +1,26 @@
+{
+  "name": "vhall/web_sdk",
+  "description": "vhall web api sdk of php",
+  "authors": [
+    {
+      "name": "yan.gao",
+      "email": "yan.gao@vhall.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.5.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "vhall\\Attendee\\": "src/vhall/Attendee",
+      "vhall\\Chat\\": "src/vhall/Chat/",
+      "vhall\\Guest\\": "src/vhall/Guest/",
+      "vhall\\Question\\": "src/vhall/Question",
+      "vhall\\Record\\": "src/vhall/Record",
+      "vhall\\Report\\": "src/vhall/Report",
+      "vhall\\Survey\\": "src/vhall/Survey",
+      "vhall\\User\\": "src/vhall/User",
+      "vhall\\Webinar\\": "src/vhall/Webinar/"
+    }
+  }
+}
