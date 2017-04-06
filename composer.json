@@ -13,14 +13,14 @@
   "autoload": {
     "psr-4": {
       "vhall\\Attendee\\": "src/vhall/Attendee",
-      "vhall\\Chat\\": "src/vhall/Chat/",
-      "vhall\\Guest\\": "src/vhall/Guest/",
+      "vhall\\Chat\\": "src/vhall/Chat",
+      "vhall\\Guest\\": "src/vhall/Guest",
       "vhall\\Question\\": "src/vhall/Question",
       "vhall\\Record\\": "src/vhall/Record",
       "vhall\\Report\\": "src/vhall/Report",
       "vhall\\Survey\\": "src/vhall/Survey",
       "vhall\\User\\": "src/vhall/User",
-      "vhall\\Webinar\\": "src/vhall/Webinar/"
+      "vhall\\Webinar\\": "src/vhall/Webinar"
     }
   }
 }
