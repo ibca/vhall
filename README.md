@@ -1,5 +1,4 @@
 # Vhall Web SDK for PHP
-[![doxygen.io](http://doxygen.io/github.com/vhall/web_sdk_php/?status.svg)](http://doxygen.io/github.com/vhall/web_sdk_php/)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](LICENSE)
 [![Build Status](https://travis-ci.org/vhall/web_sdk_php.svg)](https://travis-ci.org/vhall/web_sdk_php)
 [![Latest Stable Version](https://img.shields.io/packagist/v/vhall/web_sdk_php.svg)](https://packagist.org/packages/vhall/web_sdk_php)
