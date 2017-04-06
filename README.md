@@ -19,25 +19,45 @@ $ composer require vhall/web_sdk
 ## 使用方法
 
 ### 上传
+1 使用composer形式
 ```php
 use Vhall\Webinar;
 
-...
-    $webinarId = 250031234;
-  
-    $config = [
-        'app_key' => '9100f829ccabfeb689de7b08a0a57f2e',
-        'secret_key' => 'dc9b53947c3d2d2a0d9c4067071576e6',
-    ];
-    
-    $webinarObj = new Webinar($config);
-    
-    // 添加封面
-    $result = $webinarObj->activeimage([
-        'image' => __DIR__ . '/logo.png',
-        'webinar_id' => $webinarId
-    ]);
-...
+$webinarId = 250031234;
+
+$config = [
+    'app_key' => '9100f829ccabfeb689de7b08a0a57f2e',
+    'secret_key' => 'dc9b53947c3d2d2a0d9c4067071576e6',
+];
+
+$webinarObj = new Webinar($config);
+
+// 添加封面
+$result = $webinarObj->activeimage([
+    'image' => __DIR__ . '/logo.png',
+    'webinar_id' => $webinarId
+]);
+
+```
+
+2 直接引入使用
+```php
+require_once __DIR__.'/../autoload.php';
+use vhall\Webinar;
+
+$webinarId = 250031234;
+
+$config = [
+    'app_key' => '9100f829ccabfeb689de7b08a0a57f2e',
+    'secret_key' => 'dc9b53947c3d2d2a0d9c4067071576e6',
+];
+
+$webinarObj = new Webinar($config);
+// 添加封面
+$result = $webinarObj->activeimage([
+    'image' => __DIR__ . '/logo.png',
+    'webinar_id' => $webinarId
+]);
 ```
 
 ## 测试
