@@ -28,6 +28,8 @@ $webinarId = 250031234;
 $config = [
     'app_key' => '9100f829ccabfeb689de7b08a0a57f2e',
     'secret_key' => 'dc9b53947c3d2d2a0d9c4067071576e6',
+    'show_request_url' => true, // 是否显示构造请求连接&参数 json console (请勿在生产环境打开)
+    'show_request_data' => true, // 是否显示接口返回数据 json console (请勿在生产环境打开)
 ];
 
 $webinarObj = new Webinar($config);
@@ -50,6 +52,8 @@ $webinarId = 250031234;
 $config = [
     'app_key' => '9100f829ccabfeb689de7b08a0a57f2e',
     'secret_key' => 'dc9b53947c3d2d2a0d9c4067071576e6',
+    'show_request_url' => true, // 是否显示构造请求连接&参数 json console (请勿在生产环境打开)
+    'show_request_data' => true, // 是否显示接口返回数据 json console (请勿在生产环境打开)
 ];
 
 $webinarObj = new Webinar($config);
@@ -60,16 +64,11 @@ $result = $webinarObj->activeimage([
 ]);
 ```
 
-## 测试
-
-``` bash
-$ ./vendor/bin/phpunit tests/
-```
-
 ## 常见问题
 
 - 使用原生PHP异常处理错误，请使用catch(Exception $e) 进行捕获
 - API 的使用 demo 可以参考 (https://github.com/vhall/web_sdk_php/example)。
+- SDK不需要时刻保持最新版本,如不想更改代码,仅需下载最新 src/check.json [![check.json](https://github.com/vhall/web_sdk_php/blob/master/src/check.json)](https://github.com/vhall/web_sdk_php/blob/master/src/check.json) 并更新即可使用最新接口
 
 
 ## 联系我们
