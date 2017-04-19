@@ -68,7 +68,7 @@ $result = $webinarObj->activeimage([
 
 - 使用原生PHP异常处理错误，请使用catch(Exception $e) 进行捕获
 - API 的使用 demo 可以参考 (https://github.com/vhall/web_sdk_php/example)。
-- SDK不需要时刻保持最新版本,如不想更改代码,仅需下载最新 src/check.json [![check.json]](https://github.com/vhall/web_sdk_php/blob/master/src/check.json) 并更新即可使用最新接口
+- SDK不需要时刻保持最新版本,如不想更改代码,仅需下载最新 src/check.json [check.json](https://github.com/vhall/web_sdk_php/blob/master/src/check.json) 并更新即可使用最新接口
 
 
 ## 联系我们
