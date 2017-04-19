@@ -7,7 +7,10 @@ abstract class Common
     private $appKey;
     private $secretKey;
     private $requestDomain;
+    private $showRequestUrl; // 是否显示构建请求信息 js console.log
+    private $showRequestData; // 是否显示接口返回数据 js console.dir
     static $checkConfig;
+    const HTTP_PROTOCOL = 'http';
 
     /**
      * Common constructor.
@@ -26,9 +29,11 @@ abstract class Common
             throw new Exception('secret_key 为必选项');
         }
 
-        $this->appKey        = $config['app_key'];
-        $this->secretKey     = $config['secret_key'];
-        $this->requestDomain = isset($config['request_domain']) ? $config['request_domain'] : 'e.vhall.com';
+        $this->appKey          = $config['app_key'];
+        $this->secretKey       = $config['secret_key'];
+        $this->requestDomain   = isset($config['request_domain']) ? $config['request_domain'] : 'e.vhall.com';
+        $this->showRequestUrl  = isset($config['show_request_url']) ? $config['show_request_url'] : false;
+        $this->showRequestData = isset($config['show_request_data']) ? $config['show_request_data'] : false;
     }
 
     /**
@@ -137,6 +142,11 @@ abstract class Common
 
         $response = $this->CurlRequest($url, $param);
 
+        // 构建请求地址
+        if ($this->showRequestUrl) {
+            $this->consoleLog(self::HTTP_PROTOCOL.'://'.$url.'?'.http_build_query($param),'log');
+        }
+
         if ($response) {
             $response = json_decode($response, true);
             if (!is_array($response) || empty($response)) {
@@ -149,9 +159,36 @@ abstract class Common
                 throw new Exception($response['msg']);
             }
 
+            // 显示返回数据
+            if ($this->showRequestData) {
+                $this->consoleLog($response);
+            }
             return $response;
         } else {
             throw new Exception('接口请求失败');
+        }
+    }
+
+    /**
+     * 直接打印到console
+     * @param $data
+     * @param bool $log
+     */
+    protected function consoleLog($data, $log = false)
+    {
+        // 数据预处理json
+        if (is_string($data) && $preJsonMsg = json_decode($data, true)) {
+            if (count($preJsonMsg) > 1) {
+                $data = $preJsonMsg;
+            }
+        }
+
+        $logFunc = $log ? 'console.log' : 'console.dir';
+
+        if (is_array($data) || is_object($data)) {
+            echo("<script>".$logFunc."(".json_encode($data).");</script>");
+        } else {
+            echo("<script>".$logFunc."('".$data."');</script>");
         }
     }
 
