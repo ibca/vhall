@@ -1,252 +1,266 @@
 {
   "webinar": {
     "create": {
-      "subject": "check",
-      "start_time": "check",
-      "user_id": "pass",
-      "use_global_k": "pass",
-      "exist_3rd_auth": "pass",
-      "auth_url": "pass",
-      "failure_url": "pass",
-      "introduction": "pass",
-      "layout": "pass",
-      "type": "pass",
-      "auto_record": "pass",
-      "is_chat": "pass",
-      "host": "pass",
-      "buffer": "pass",
-      "is_allow_extension": "pass"
+      "do_check": "subject,start_time",
+      "pass": "user_id,use_global_k,exist_3rd_auth,auth_url,failure_url,introduction,layout,type,auto_record,is_chat,host,buffer,is_allow_extension"
     },
     "start": {
-      "webinar_id": "check",
-      "is_sec_auth": "pass"
+      "do_check": "webinar_id",
+      "pass": "is_sec_auth"
     },
     "fetch": {
-      "webinar_id": "check",
-      "fields": "check"
+      "do_check": "webinar_id,fields",
+      "pass": ""
     },
     "state": {
-      "webinar_id": "check"
+      "do_check": "webinar_id",
+      "pass": ""
     },
     "list": {
-      "user_id": "pass",
-      "type": "pass",
-      "pos": "pass",
-      "limit": "pass",
-      "status": "pass"
+      "do_check": "",
+      "pass": "user_id,type,pos,limit,status"
     },
     "update": {
-      "webinar_id": "check",
-      "subject": "pass",
-      "start_time": "pass",
-      "use_global_k": "pass",
-      "exist_3rd_auth": "pass",
-      "auth_url": "pass",
-      "introduction": "pass",
-      "layout": "pass",
-      "is_open": "pass",
-      "auto_record": "pass",
-      "is_chat": "pass",
-      "host": "pass",
-      "buffer": "pass"
+      "do_check": "webinar_id",
+      "pass": "subject,start_time,use_global_k,exist_3rd_auth,auth_url,introduction,layout,is_open,auto_record,is_chat,host,buffer"
     },
     "stop": {
-      "webinar_id": "check"
+      "do_check": "webinar_id",
+      "pass": ""
     },
     "delete": {
-      "webinar_id": "check"
+      "do_check": "webinar_id",
+      "pass": ""
     },
     "current-online-number": {
-      "webinar_id": "check"
+      "do_check": "webinar_id",
+      "pass": ""
+    },
+    "get-online-limit": {
+      "do_check": "webinar_id",
+      "pass": ""
+    },
+    "whole-auth-url": {
+      "do_check": "exist_3rd_auth,auth_url",
+      "pass": "failure_url,cover_child"
+    },
+    "activeimage": {
+      "do_check": "webinar_id,image",
+      "pass": ""
+    },
+    "pay": {
+      "do_check": "user_id,webinar_id,type,fee",
+      "pass": "note,return_url,jump_url,app_key"
+    },
+    "online-top-number": {
+      "do_check": "webinar_id",
+      "pass": ""
+    },
+    "last-option-time": {
+      "do_check": "webinar_id",
+      "pass": ""
+    },
+    "app-pay": {
+      "do_check": "user_id,webinar_id,type,fee",
+      "pass": "note,return_url,jump_url,app_key"
+    },
+    "top-online-by-times": {
+      "do_check": "webinar_id",
+      "pass": "limit"
+    },
+    "create-webinar-from-record": {
+      "do_check": "record_id",
+      "pass": "subject,use_global_k,exist_3rd_auth,auth_url,failure_url,introduction,is_open,is_chat"
     },
     "report": {
-      "webianr_id": "check",
-      "time_span": "check"
+      "do_check": "webianr_id,time_span",
+      "pass": ""
     },
-    "whole-auth-url" : {
-      "exist_3rd_auth" : "check",
-      "auth_url" : "check",
-      "failure_url" : "pass",
-      "cover_child" : "pass"
+    "concurrency-batch": {
+      "do_check": "",
+      "pass": ""
     },
-    "activeimage" : {
-      "webinar_id" : "check",
-      "image" : "check"
+    "info-batch": {
+      "do_check": "",
+      "pass": ""
     },
-    "online-top-number" : {
-      "webinar_id" : "check"
+    "instant-state-batch": {
+      "do_check": "wids",
+      "pass": "last_time"
     },
-    "last-option-time" : {
-      "webinar_id" : "check"
-    },
-    "top-online-by-times" : {
-      "webinar_id" : "check",
-      "limit" : "pass"
-    }
-  },
-  "report": {
-    "onlie": {
-      "webinar_id": "check",
-      "start_time": "check",
-      "end_time": "check"
-    },
-    "attendee-records": {
-      "webinar_id": "check"
-    },
-    "track" : {
-      "webinar_id" : "check",
-      "time_span" : "check"
-    },
-    "sign" : {
-      "webinar_id" : "check",
-      "pos" : "pass",
-      "limit" : "pass"
-    },
-    "sign-record" : {
-      "sign_id" : "check",
-      "pos" : "pass",
-      "limit" : "pass"
+    "assistant-start-data": {
+      "do_check": "webinar_id",
+      "pass": ""
     }
   },
   "guest": {
     "url": {
-      "webinar_id": "check",
-      "email": "check",
-      "name": "check",
-      "is_sec_auth": "pass",
-      "type": "pass"
+      "do_check": "webinar_id,email,name",
+      "pass": "is_sec_auth,type"
     },
-    "add-authorization" : {
-      "webinar_id" : "check",
-      "users" : "check",
-      "role_name" : "check"
+    "cancel-url": {
+      "do_check": "webinar_id",
+      "pass": "email,user_id"
     },
-    "cancel-url" : {
-      "webinar_id" : "check",
-      "email" : "pass",
-      "user_id" : "pass"
+    "add-authorization": {
+      "do_check": "webinar_id,users,role_name",
+      "pass": ""
+    }
+  },
+  "report": {
+    "online": {
+      "do_check": "webinar_id,start_time,end_time",
+      "pass": ""
+    },
+    "attendee-records": {
+      "do_check": "webinar_id",
+      "pass": ""
+    },
+    "track": {
+      "do_check": "webinar_id,time_span",
+      "pass": ""
+    },
+    "sign": {
+      "do_check": "webinar_id",
+      "pass": "pos,limit"
+    },
+    "sign-record": {
+      "do_check": "sign_id",
+      "pass": "pos,limit"
     }
   },
   "chat": {
-    "history" : {
-      "webinar_id" : "check",
-      "start_time" : "pass",
-      "end_time" : "pass",
-      "pos" : "pass",
-      "limit" : "pass"
+    "filter": {
+      "do_check": "webinar_id,email,name,is_sec_auth",
+      "pass": ""
     },
-    "filter" : {
-      "webinar_id" : "check",
-      "email" : "check",
-      "name" : "check",
-      "is_sec_auth" : "check"
+    "history": {
+      "do_check": "webinar_id",
+      "pass": "start_time,end_time,pos,limit"
     },
-    "send-comment" : {
-      "webinar_id" : "check",
-      "content" : "check",
-      "user_id" : "check",
-      "nick_name" : "check"
+    "send-comment": {
+      "do_check": "webinar_id,content,user_id,nick_name",
+      "pass": ""
+    }
+  },
+  "attendee": {
+    "add-whitelist": {
+      "do_check": "webinar_id,limit",
+      "pass": ""
+    },
+    "gen-token": {
+      "do_check": "webinar_id,email,name",
+      "pass": "app_key"
+    }
+  },
+  "survey": {
+    "list": {
+      "do_check": "",
+      "pass": ""
+    },
+    "reports": {
+      "do_check": "ask_id",
+      "pass": ""
+    }
+  },
+  "record": {
+    "create": {
+      "do_check": "webinar_id,subject",
+      "pass": "type,start_time,end_time,start_cut_second,end_cut_second"
+    },
+    "list": {
+      "do_check": "",
+      "pass": "webinar_id,user_id,pos,limit,time_seq"
+    },
+    "uploadlist": {
+      "do_check": "pos,limit",
+      "pass": ""
+    },
+    "upload-bind": {
+      "do_check": "webinar_id,list_id",
+      "pass": "subject"
+    },
+    "record-time": {
+      "do_check": "record_id",
+      "pass": ""
+    },
+    "default": {
+      "do_check": "record_id",
+      "pass": ""
+    }
+  },
+  "verify": {
+    "access-token": {
+      "do_check": "",
+      "pass": "app_key"
+    }
+  },
+  "other": {
+    "day-video-picture": {
+      "do_check": "webinar_id,num",
+      "pass": ""
+    },
+    "video-picture": {
+      "do_check": "webinar_id,num",
+      "pass": ""
+    }
+  },
+  "user": {
+    "register": {
+      "do_check": "third_user_id,pass",
+      "pass": "phone,name,email,head,customized_field,customized_value"
+    },
+    "update": {
+      "do_check": "third_user_id",
+      "pass": "pass,phone,name,email,head,customized_field,customized_value"
+    },
+    "get-user-id": {
+      "do_check": "third_user_id",
+      "pass": ""
+    },
+    "change-user-power": {
+      "do_check": "user_id,is_child,assign",
+      "pass": ""
+    },
+    "get-user-power": {
+      "do_check": "user_id",
+      "pass": ""
+    },
+    "use-flow": {
+      "do_check": "user_id,time_span",
+      "pass": ""
+    },
+    "get-child-list": {
+      "do_check": "",
+      "pass": "source,pos,limit"
+    },
+    "get-user-info": {
+      "do_check": "user_id,fields",
+      "pass": ""
     }
   },
   "question": {
-    "manage" : {
-      "webinar_id" : "check",
-      "email" : "check",
-      "name" : "check",
-      "is_sec_auth" : "pass"
+    "manage": {
+      "do_check": "webinar_id,email,name",
+      "pass": "is_sec_auth"
     }
   },
-  "attendee" : {
-    "add-whitelist" : {
-      "webinar_id" : "check",
-      "limit" : "check"
+  "pingan": {
+    "tag": {
+      "do_check": "status",
+      "pass": ""
     },
-    "gen-token" : {
-      "webinar_id" : "check",
-      "email" : "check",
-      "name" : "check",
-      "app_key" : "pass"
-    }
-  },
-  "survey" :{
-    "list" : {},
-    "reports" : {
-      "ask_id" : "check"
-    }
-  },
-  "record" : {
-    "create" : {
-      "webinar_id" : "check",
-      "subject" : "check",
-      "type" : "pass",
-      "start_time" : "pass",
-      "end_time" : "pass",
-      "start_cut_second" : "pass",
-      "end_cut_second" : "pass"
+    "video-by-tag": {
+      "do_check": "status,topic_id",
+      "pass": "pos,limit"
     },
-    "list" : {
-      "webinar_id" : "pass",
-      "user_id" : "pass",
-      "pos" : "pass",
-      "limit" : "pass",
-      "time_seq" : "pass"
+    "send-msg": {
+      "do_check": "money,user_id,webinar_id",
+      "pass": ""
     },
-    "record-time" : {
-      "record_id" : "check"
-    },
-    "default" : {
-      "record_id" : "check"
-    }
-  },
-  "verify" : {
-    "access-token" : {
-      "app_key" : "pass"
-    }
-  },
-  "user" : {
-    "register" : {
-      "third_user_id" : "check",
-      "pass" : "check",
-      "phone" : "pass",
-      "name" : "pass",
-      "email" : "pass",
-      "head" : "pass",
-      "customized_field" : "pass",
-      "customized_value" : "pass"
-    },
-    "update" : {
-      "third_user_id" : "check",
-      "pass" : "pass",
-      "phone" : "pass",
-      "name" : "pass",
-      "email" : "pass",
-      "head" : "pass",
-      "customized_field" : "pass",
-      "customized_value" : "pass"
-    },
-    "get-user-id" : {
-      "third_user_id" : "check"
-    },
-    "change-user-power" : {
-      "user_id" : "check",
-      "is_child" : "check",
-      "assign" : "check"
-    },
-    "get-user-power" : {
-      "user_id" : "check"
-    },
-    "get-child-list" : {
-      "source" : "pass",
-      "pos" : "pass",
-      "limit" : "pass"
-    },
-    "get-user-info" : {
-      "user_id" : "check",
-      "fields" : "check"
-    },
-    "use-flow" : {
-      "user_id" : "check",
-      "time_span" : "check"
+    "register": {
+      "do_check": "third_user_id,pass",
+      "pass": "name,phone,email,head,assistant-start-data,customized_value"
     }
   }
 }

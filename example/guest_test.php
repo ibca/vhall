@@ -8,8 +8,8 @@ use vhall\Guest;
 $webinarId = 250031234;
 
 $config = [
-    'app_key' => '9100f829ccabfeb689de7b08a0a57f2e',
-    'secret_key' => 'dc9b53947c3d2d2a0d9c4067071576e6',
+    'app_key' => '19e934c79697b639eaaf35d78aa048f8',
+    'secret_key' => 'de88a432a833ea1e82c485169f5c843b',
     'request_domain' => 'www.livhall.com',
     'show_request_url' => true,
     'show_request_data' => true,

@@ -106,16 +106,15 @@ abstract class Common
     protected function paramCheck($param, $checkData)
     {
         $requestData = [];
-
-        foreach ($checkData as $paramIndex => $checkLogic) {
-            if ($checkLogic == 'check') {
-                if (!isset($param[$paramIndex])) {
-                    throw new Exception('字段' . $paramIndex . '为必传字段');
+        foreach ($checkData as $checkLogic => $paramMsg) {
+            $paramMsg = explode(',', $paramMsg);
+            foreach ($paramMsg as $value) {
+                if ($checkLogic == 'do_check' && !isset($param[$value])) {
+                    throw new Exception('字段' . $value . '为必传字段');
                 }
-                $requestData[$paramIndex] = $param[$paramIndex];
-            } else {
-                if (isset($param[$paramIndex]) && $param[$paramIndex]) {
-                    $requestData[$paramIndex] = $param[$paramIndex];
+
+                if (isset($param[$value]) && $param[$value]) {
+                    $requestData[$value] = $param[$value];
                 }
             }
         }
