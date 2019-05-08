@@ -6,7 +6,7 @@
 
 * 通过composer，这是推荐的方式
 ```bash
-$ composer require ibca/vhall
+$ composer require ibca/vhall:dev-master
 ```
 * 直接下载安装，SDK 没有依赖其他第三方库，但需要参照 composer的autoloader，增加一个自己的autoloader程序。
 
