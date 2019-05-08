@@ -1,10 +1,10 @@
 {
-  "name": "vhall/web_sdk",
+  "name": "ibca/vhall",
   "description": "vhall web api sdk of php",
   "authors": [
     {
-      "name": "yan.gao",
-      "email": "yan.gao@vhall.com"
+        "name": "jackyang",
+        "email": "ibca@163.com"
     }
   ],
   "require": {
@@ -12,7 +12,7 @@
   },
   "autoload": {
     "psr-4": {
-      "vhall\\": "src/vhall/"
+      "Ibca\\Vhall\\": "src/"
     }
   }
 }

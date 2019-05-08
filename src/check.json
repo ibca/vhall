@@ -73,7 +73,7 @@
       "pass": "subject,use_global_k,exist_3rd_auth,auth_url,failure_url,introduction,is_open,is_chat"
     },
     "report": {
-      "do_check": "webianr_id,time_span",
+      "do_check": "webinar_id,time_span",
       "pass": ""
     },
     "concurrency-batch": {
@@ -89,6 +89,14 @@
       "pass": "last_time"
     },
     "assistant-start-data": {
+      "do_check": "webinar_id",
+      "pass": ""
+    },
+    "push-start": {
+      "do_check": "webinar_id",
+      "pass": ""
+    },
+    "get-stream-push-address": {
       "do_check": "webinar_id",
       "pass": ""
     }
