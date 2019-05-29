@@ -134,6 +134,20 @@ class Webinar extends Common
         return $this->requestCurl($model, $func, $param);
     }
 
+    /***
+     * 获取直播列表
+     * @param array $param
+     * @return bool|mixed
+     * @throws Exception
+     */
+    public function list()
+    {
+        $model = $this->getModel(__CLASS__);
+        $func = $this->getFunc(__FUNCTION__);
+        list($paramCheck, $method) = $this->listCheckAndFunc($model, $func);
+        return $this->requestData($method, []);
+    }
+
 
 
     /***

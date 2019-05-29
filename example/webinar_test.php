@@ -1,7 +1,10 @@
 <?php
+
+use Ibca\Vhall\Record;
+use Ibca\Vhall\Webinar;
+
 require_once __DIR__.'/../autoload.php';
 
-use vhall\Webinar;
 
 
 $webinarId = 250031234;
@@ -14,7 +17,10 @@ $config = [
     'show_request_data' => true,
 ];
 
-$webinarObj = new Webinar($config);
+try {
+    $webinarObj = new Webinar($config);
+} catch (Exception $e) {
+}
 // 添加封面
 $result = $webinarObj->activeimage([
     'image' => __DIR__ . '/logo.png',
@@ -27,6 +33,20 @@ $result = $webinarObj->activeimage([
 //    'start_time' => time() + 3600,
 //    'type' => 1,
 //]);
+
+$webinarObj = new Record($config);
+$result = $webinarObj->list([
+    'webinar_id' => '157499133'
+]);
+//            $result = $webinarObj->create([
+//                'webinar_id' => '157499133',
+//                'subject' => '测试3333',
+//                'type' => 0,
+//                'start_time' => '1558972800',
+//                'end_time' => '1559145600'
+//            ]);
+//            $result = $webinarObj->list();
+dd($result);
 
 $result = $webinarObj->online_top_number([
     'webinar_id' => $webinarId
